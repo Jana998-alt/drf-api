@@ -19,6 +19,6 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("particles.urls")),
+    path('api/v1/particles/', include("particles.urls")),
     path('api/v1/particle/<int:pk>', include("particles.urls"))
 ]

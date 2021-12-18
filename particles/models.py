@@ -10,5 +10,6 @@ class Particle(models.Model):
     auther = models.ForeignKey(get_user_model(), on_delete=CASCADE)
     charge =  models.TextField()
     type = models.TextField()
+    
     def __str__(self):
         return self.name

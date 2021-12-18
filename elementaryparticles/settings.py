@@ -13,9 +13,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-        ]
+        'rest_framework.permissions.IsAuthenticated',
+    ]
 }
+
 
 from pathlib import Path
 
@@ -85,8 +86,12 @@ WSGI_APPLICATION = 'elementaryparticles.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER' : 'postgres', 
+        'HOST' : 'db',
+        'PORT' : '5432',
+        'PASSWORD' : 'postgres',
     }
 }
 
@@ -116,6 +121,8 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+
+USE_I18N = True
 
 USE_I18N = True
 
