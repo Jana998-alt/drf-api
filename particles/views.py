@@ -8,8 +8,10 @@ from .permissions import IsAuthorOrReadOnly
 class ParticlesListView(generics.ListCreateAPIView):
     serializer_class = ParticlesSerializer
     queryset =  Particle.objects.all()
+    permission_classes = (IsAuthorOrReadOnly,)
 
 class ParticlesDetailsView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ParticlesSerializer
     queryset =  Particle.objects.all()
-    permission_classes = (IsAuthorOrReadOnly)
+    permission_classes = (IsAuthorOrReadOnly,)
+
